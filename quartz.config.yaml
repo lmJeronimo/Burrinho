@@ -1,12 +1,12 @@
 # yaml-language-server: $schema=./quartz/plugins/quartz-plugins.schema.json
 configuration:
-  pageTitle: Quartz 5
-  pageTitleSuffix: ""
+  pageTitle: Burrinho
+  pageTitleSuffix: " | jmL"
   enableSPA: true
   enablePopovers: true
   analytics:
     provider: plausible
-  locale: en-US
+  locale: pt-BR
   baseUrl: lmJeronimo.github.io/Burrinho
   ignorePatterns:
     - private
@@ -41,9 +41,11 @@ configuration:
         highlight: rgba(143, 159, 169, 0.15)
         textHighlight: "#b3aa0288"
 plugins:
-  - source: "@quartz-community/created-modified-date"
+  - source: "@quartz-themes/core"
     enabled: true
     options:
+      theme: "apple-notes"
+      mode: "both"
       defaultDateType: modified
       priority:
         - frontmatter
@@ -146,14 +148,42 @@ plugins:
   - source: "@quartz-community/folder-page"
     enabled: true
   - source: "@quartz-community/tag-page"
-    enabled: true
+    enabled: note-properties
   - source: "@quartz-community/explorer"
     enabled: true
     layout:
       position: left
       priority: 50
+    options:
+      folderClickBehavior: "link"
+      folderDefaultState: "collapsed"
+      useSavedState: true
   - source: "@quartz-community/graph"
     enabled: true
+    options:
+      localGraph:
+        drag: true
+        zoom: true
+        depth: 1
+        scale: 1.1
+        repelForce: 1
+        centerForce: 0.3
+        linkDistance: 30
+        fontSize: 0.6
+        opacityScale: 1
+        enableRadial: false
+      globalGraph:
+        drag: true
+        zoom: true
+        depth: -1
+        scale: 0.9
+        repelForce: 1
+        centerForce: 0.3
+        linkDistance: 30
+        fontSize: 0.6
+        opacityScale: 1
+        focusOnHover: true
+        enableRadial: false
     layout:
       position: right
       priority: 10
